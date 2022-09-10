@@ -1,6 +1,6 @@
 import sys, os, unittest, re
 sys.path.append(os.path.realpath('.'))
-from py_logger import *
+from logger import *
 
 class Test_Logger(unittest.TestCase):
 

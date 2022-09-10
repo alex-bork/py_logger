@@ -2,8 +2,8 @@ from setuptools import setup
 
 setup(
     name='abork_logger',
-    version='1.0.0',
+    version='1.0.1',
     author='Alex Bork',
-    packages=['py_logger'],
+    packages=['logger'],
     description='Logging Library'
     )
