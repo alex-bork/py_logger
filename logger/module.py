@@ -68,7 +68,9 @@ class LogFileTarget(TargetAbstract):
         for level in range(level):
             message = '\t' + message
 
-        with open(self.file, mode='a') as file:
+        message += '\n'
+
+        with open(self.file, mode='w') as file:
             file.write(message)
 
 
