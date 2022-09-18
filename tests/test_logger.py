@@ -35,6 +35,19 @@ class Test_Logger(unittest.TestCase):
 
         os.remove(file_path)
 
+    def test_init__with_wrong_type(self):
+
+        class WrongClass:
+            pass
+
+        try:
+            s = WrongClass()
+            l = Logger([s])
+            self.fail()
+
+        except WrongTypeError:
+            pass
+
 
 if __name__ == '__main__':
     unittest.main()

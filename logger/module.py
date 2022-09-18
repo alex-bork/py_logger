@@ -6,6 +6,10 @@ from colorama import init
 from termcolor import colored
 
 
+class WrongTypeError(Exception):
+    pass
+
+
 class MessageTypes(Enum):
 
     SUCCESS = 'green'
@@ -71,6 +75,13 @@ class LogFileTarget(TargetAbstract):
 class Logger:
 
     def __init__(self, targets: list[TargetAbstract]) -> None:
+
+        if not isinstance(targets, list):
+            raise WrongTypeError('Targets is not a list')
+
+        for target in targets:
+            if not isinstance(target, TargetAbstract):
+                raise WrongTypeError('One of the targets has a wrong type.')
         
         self.targets = targets
 
