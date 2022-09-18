@@ -70,7 +70,7 @@ class LogFileTarget(TargetAbstract):
 
         message += '\n'
 
-        with open(self.file, mode='w') as file:
+        with open(self.file, mode='a') as file:
             file.write(message)
 
 
